@@ -23,13 +23,13 @@ Summary(sv):	CGI Perlmodul
 Summary(uk):	Модуль для Perl CGI
 Summary(zh_CN):	CGI Perl дё©И
 Name:		perl-CGI
-Version:	3.01
+Version:	3.04
 Release:	1
 Epoch:		1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
-# Source0-md5:	162447b0be69e6895b595ae85bbdd62a
+# Source0-md5:	abeca476bd3c2119e489c1a4fe6c3ed2
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	perl-devel
 BuildArch:	noarch
@@ -84,8 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README *.html
-%{perl_vendorlib}/CGI.pm
-%{perl_vendorlib}/CGI/*
+%{perl_vendorlib}/%{pdir}.pm
+%{perl_vendorlib}/%{pdir}/*
 %{_mandir}/man3/*
 
 %files examples
