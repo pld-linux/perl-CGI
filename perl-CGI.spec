@@ -61,7 +61,7 @@ Przyk³ady u¿ycia modu³u CGI.
 %setup -q -n %{pnam}.pm-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 
 %{!?_without_tests:%{__make} test}
