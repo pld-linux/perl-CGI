@@ -30,7 +30,7 @@ License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl
+BuildRequires:	perl-devel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
