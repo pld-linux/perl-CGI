@@ -7,9 +7,15 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
+Group(cs):	Vývojové prostøedky/Programovací jazyky/Perl
 Group(de):	Entwicklung/Sprachen/Perl
+Group(es):	Desarrollo/Lenguajes/Perl
+Group(fr):	Development/Langues/Perl
+Group(ja):	³«È¯/¸À¸ì/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source0:	 ftp://ftp.perl.org/pub/CPAN/modules/by-module/CGI/CGI.pm-%{version}.tar.gz
+Group(pt):	Desenvolvimento/Linguagens/Perl
+Group(ru):	òÁÚÒÁÂÏÔËÁ/ñÚÙËÉ/Perl
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/CGI/CGI.pm-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl
 BuildArch:	noarch
@@ -18,13 +24,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_noautoreq	"perl(FCGI)" "perl(Apache)"
 
 %description
-CGI is an easy-to-use Perl5 library for writing World Wide Web CGI scripts.
-This is replacement for usually outdated CGI module from perl distribution.
+CGI is an easy-to-use Perl5 library for writing World Wide Web CGI
+scripts. This is replacement for usually outdated CGI module from perl
+distribution.
 
 %description -l pl
-CGI jest modu³em to prostego i szybkiego pisania aplikacji dla WWW - skryptów
-CGI. Pakiet ten zawiera zamiennik dla zazwyczaj starej wersji modu³u CGI która
-jest dostarczana razem z perlem.
+CGI jest modu³em to prostego i szybkiego pisania aplikacji dla WWW -
+skryptów CGI. Pakiet ten zawiera zamiennik dla zazwyczaj starej wersji
+modu³u CGI która jest dostarczana razem z perlem.
 
 %prep
 %setup -q -n CGI.pm-%{version}
