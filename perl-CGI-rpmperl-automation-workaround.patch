@@ -1,0 +1,26 @@
+diff -urN CGI.pm-2.74.orig/CGI/Fast.pm CGI.pm-2.74/CGI/Fast.pm
+--- CGI.pm-2.74.orig/CGI/Fast.pm	Fri Mar 24 14:09:24 2000
++++ CGI.pm-2.74/CGI/Fast.pm	Sun Feb 11 16:41:28 2001
+@@ -18,8 +18,7 @@
+ #   ftp://ftp-genome.wi.mit.edu/pub/software/WWW/
+ $CGI::Fast::VERSION='1.02';
+ 
+-use CGI;
+-use FCGI;
++use CGI; use FCGI;
+ @ISA = ('CGI');
+ 
+ # workaround for known bug in libfcgi
+diff -urN CGI.pm-2.74.orig/CGI.pm CGI.pm-2.74/CGI.pm
+--- CGI.pm-2.74.orig/CGI.pm	Wed Sep 13 18:29:56 2000
++++ CGI.pm-2.74/CGI.pm	Sun Feb 11 16:40:27 2001
+@@ -148,8 +148,7 @@
+     && 
+     ($MOD_PERL = $ENV{'GATEWAY_INTERFACE'} =~ /^CGI-Perl\//))
+ {
+-    $| = 1;
+-    require Apache;
++    $| = 1; require Apache;
+ }
+ # Turn on special checking for ActiveState's PerlEx
+ $PERLEX++ if defined($ENV{'GATEWAY_INTERFACE'}) && $ENV{'GATEWAY_INTERFACE'} =~ /^CGI-PerlEx/;
