@@ -29,6 +29,7 @@ Epoch:		1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
+# Source0-md5:	b530ecea59b5d5c06bf6ceeedbd9057a
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-devel
 BuildArch:	noarch
