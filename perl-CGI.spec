@@ -1,32 +1,18 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	CGI
 %define		pnam	CGI
-Summary:	CGI Perl module
-Summary(cs):	Modul CGI pro Perl
-Summary(da):	Perlmodul CGI
-Summary(de):	CGI Perl Modul
-Summary(es):	Módulo de Perl CGI
-Summary(fr):	Module Perl CGI
-Summary(it):	Modulo di Perl CGI
-Summary(ja):	CGI Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	CGI ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul CGI
-Summary(pl):	Modu³ Perla CGI
-Summary(pt):	Módulo de Perl CGI
-Summary(pt_BR):	Módulo Perl CGI
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl CGI
-Summary(sv):	CGI Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl CGI
-Summary(zh_CN):	CGI Perl Ä£¿é
+Summary:	CGI Perl module - simple CGI interface class
+Summary(pl):	Modu³ Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
 Version:	3.04
 Release:	1
 Epoch:		1
-License:	GPL/Artistic
+# same as perl
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
 # Source0-md5:	abeca476bd3c2119e489c1a4fe6c3ed2
@@ -35,7 +21,7 @@ BuildRequires:	perl-devel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	perl(FCGI) perl(Apache.*) perl(APR::Pool) perl(mod_perl) perl(ModPerl::Util)
+%define		_noautoreq	perl(FCGI)
 
 %description
 CGI is an easy-to-use Perl5 library for writing World Wide Web CGI
@@ -67,7 +53,7 @@ Przyk³ady u¿ycia modu³u CGI.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -84,8 +70,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README *.html
-%{perl_vendorlib}/%{pdir}.pm
-%{perl_vendorlib}/%{pdir}/*
+%{perl_vendorlib}/CGI.pm
+%{perl_vendorlib}/CGI/*
 %{_mandir}/man3/*
 
 %files examples
