@@ -23,7 +23,7 @@ Summary(sv):	CGI Perlmodul
 Summary(uk):	Модуль для Perl CGI
 Summary(zh_CN):	CGI Perl дё©И
 Name:		perl-CGI
-Version:	2.86
+Version:	2.89
 Release:	1
 Epoch:		1
 License:	GPL/Artistic
@@ -34,7 +34,7 @@ BuildRequires:	perl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	"perl(FCGI)" "perl(Apache)"
+%define		_noautoreq	"perl(FCGI)" "perl(Apache)" 'perl(Apache::compat)' 'perl(mod_perl)'
 
 %description
 CGI is an easy-to-use Perl5 library for writing World Wide Web CGI
