@@ -30,12 +30,12 @@ License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
 # Source0-md5:	8f12c0d0462409ab33447a44dbaefe2b
-BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	perl-devel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'perl(FCGI)' 'perl(Apache) 'perl(Apache::compat)' 'perl(mod_perl)'
+%define		_noautoreq	perl(FCGI) perl(Apache.*) perl(APR::Pool) perl(mod_perl) perl(ModPerl::Util)
 
 %description
 CGI is an easy-to-use Perl5 library for writing World Wide Web CGI
