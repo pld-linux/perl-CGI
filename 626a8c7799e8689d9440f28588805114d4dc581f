@@ -1,0 +1,1 @@
+- BR: perl-devel >= 1:5.8.0; do not BR: perl
