@@ -2,14 +2,14 @@
 Summary:	CGI perl module
 Summary(pl):	Modu³ perla CGI
 Name:		perl-CGI
-Version:	2.76
-Release:	2
+Version:	2.77
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source0:	ftp://ftp.cpan.org/CPAN/authors/id/L/LD/LDS/CGI.pm-%{version}.tar.gz
+Source0:	ftp://ftp.perl.org/pub/CPAN/authors/id/L/LD/LDS/CGI.pm-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl
 BuildArch:	noarch
