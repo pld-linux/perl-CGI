@@ -23,18 +23,19 @@ Summary(sv):	CGI Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl CGI
 Summary(zh_CN):	CGI Perl Ä£¿é
 Name:		perl-CGI
-Version:	2.91
-Release:	2
+Version:	2.99
+Release:	1
 Epoch:		1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
+# Source0-md5:	8f12c0d0462409ab33447a44dbaefe2b
+BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 4.0.2-104
-BuildRequires:	perl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	"perl(FCGI)" "perl(Apache)" 'perl(Apache::compat)' 'perl(mod_perl)'
+%define		_noautoreq	'perl(FCGI)' 'perl(Apache[^)]*)' 'perl(APR::Pool)' 'perl(mod_perl)' 'perl(ModPerl::Util)'
 
 %description
 CGI is an easy-to-use Perl5 library for writing World Wide Web CGI
@@ -50,6 +51,7 @@ modu³u CGI która jest dostarczana razem z perlem.
 Summary:	Examples for the CGI module
 Summary(pl):	Przyk³ady u¿ycia modu³u CGI
 Group:		Development/Languages/Perl
+Requires:	%{name} = %{epoch}:%{version}
 
 %description examples
 Examples for the CGI module.
@@ -69,7 +71,8 @@ Przyk³ady u¿ycia modu³u CGI.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}
 cp -a examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
@@ -88,5 +91,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.cgi
-%{_examplesdir}/%{name}-%{version}/*.[^c]*
+%{_examplesdir}/%{name}-%{version}/*.[!c]*
 %{_examplesdir}/%{name}-%{version}/WORLD*
