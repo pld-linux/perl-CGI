@@ -14,7 +14,7 @@ BuildRequires:	perl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	"perl(FCGI)" "perl(Apache)"
+%define		_noautoreq	"perl(FCGI)" "perl(Apache)" "perl(autoload)"
 
 %description
 CGI is an easy-to-use Perl5 library for writing World Wide Web CGI scripts.
