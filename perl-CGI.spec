@@ -9,10 +9,11 @@ Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.cpan.org/CPAN/authors/id/L/LD/LDS/CGI.pm-%{version}.tar.gz
-Patch0: %{name}-rpmperl-automation-workaround.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoreq	"perl(FCGI)" "perl(Apache)"
 
 %description
 CGI is an easy-to-use Perl5 library for writing World Wide Web CGI scripts.
@@ -25,7 +26,6 @@ jest dostarczana razem z perlem.
 
 %prep
 %setup -q -n CGI.pm-%{version}
-%patch0 -p1
 
 %build
 perl Makefile.PL
