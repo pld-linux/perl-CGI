@@ -23,13 +23,13 @@ Summary(sv):	CGI Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl CGI
 Summary(zh_CN):	CGI Perl Ä£¿é
 Name:		perl-CGI
-Version:	2.99
+Version:	3.00
 Release:	1
 Epoch:		1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
-# Source0-md5:	8f12c0d0462409ab33447a44dbaefe2b
+# Source0-md5:	1c2ff7624b903a6d895c9a295e69fc82
 BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildArch:	noarch
@@ -70,11 +70,11 @@ Przyk³ady u¿ycia modu³u CGI.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_examplesdir}
 cp -a examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
