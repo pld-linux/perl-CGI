@@ -3,12 +3,13 @@ Summary:	CGI perl module
 Summary(pl):	Modu³ perla CGI
 Name:		perl-CGI
 Version:	3.02
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.cpan.org/CPAN/authors/id/L/LD/LDS/CGI.pm-%{version}.tar.gz
+Patch0:		%{name}-installdir.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl
 BuildArch:	noarch
@@ -27,6 +28,7 @@ jest dostarczana razem z perlem.
 
 %prep
 %setup -q -n CGI.pm-%{version}
+%patch0 -p1
 
 %build
 perl Makefile.PL
@@ -47,5 +49,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %doc %{_mandir}/man3/*
-%{perl_privlib}/CGI.pm
-%{perl_privlib}/CGI
+%{perl_sitelib}/CGI.pm
+%{perl_sitelib}/CGI
