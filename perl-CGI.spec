@@ -9,7 +9,7 @@ Summary:	CGI Perl module - simple CGI interface class
 Summary(pl):	Modu³ Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
 Version:	3.04
-Release:	1
+Release:	2
 Epoch:		1
 # same as perl
 License:	GPL or Artistic
@@ -54,6 +54,13 @@ Przyk³ady u¿ycia modu³u CGI.
 %{__make}
 
 %{?with_tests:%{__make} test}
+
+cd examples
+for i in *
+do
+	sed -i -e 's|/usr/local/bin/perl|/usr/bin/perl|g' $i
+done
+cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
