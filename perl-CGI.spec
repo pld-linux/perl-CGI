@@ -24,12 +24,12 @@ Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl CGI
 Summary(zh_CN):	CGI Perl Ä£¿é
 Name:		perl-CGI
 Version:	2.91
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -61,7 +61,8 @@ Przyk³ady u¿ycia modu³u CGI.
 %setup -q -n %{pnam}.pm-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 
 %{!?_without_tests:%{__make} test}
@@ -80,8 +81,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README *.html
-%{perl_privlib}/CGI.pm
-%{perl_privlib}/CGI
+%{perl_vendorlib}/CGI.pm
+%{perl_vendorlib}/CGI
 %{_mandir}/man3/*
 
 %files examples
