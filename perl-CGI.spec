@@ -1,13 +1,30 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	CGI perl module
-Summary(pl):	Modu³ perla CGI
+%define		pdir	CGI
+%define		pnam	CGI
+Summary:	CGI Perl module
+Summary(cs):	Modul CGI pro Perl
+Summary(da):	Perlmodul CGI
+Summary(de):	CGI Perl Modul
+Summary(es):	Módulo de Perl CGI
+Summary(fr):	Module Perl CGI
+Summary(it):	Modulo di Perl CGI
+Summary(ja):	CGI Perl ¥â¥¸¥å¡¼¥ë
+Summary(ko):	CGI ÆÞ ¸ðÁÙ
+Summary(no):	Perlmodul CGI
+Summary(pl):	Modu³ Perla CGI
+Summary(pt):	Módulo de Perl CGI
+Summary(pt_BR):	Módulo Perl CGI
+Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl CGI
+Summary(sv):	CGI Perlmodul
+Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl CGI
+Summary(zh_CN):	CGI Perl Ä£¿é
 Name:		perl-CGI
 Version:	2.80
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/CGI/CGI.pm-%{version}.tar.gz
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl
 BuildArch:	noarch
@@ -26,7 +43,7 @@ skryptów CGI. Pakiet ten zawiera zamiennik dla zazwyczaj starej wersji
 modu³u CGI która jest dostarczana razem z perlem.
 
 %prep
-%setup -q -n CGI.pm-%{version}
+%setup -q -n %{pnam}.pm-%{version}
 
 %build
 perl Makefile.PL
@@ -37,15 +54,13 @@ perl Makefile.PL
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-gzip -9nf README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README
 %doc %{_mandir}/man3/*
 %{perl_privlib}/CGI.pm
 %{perl_privlib}/CGI
