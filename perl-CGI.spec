@@ -24,7 +24,7 @@ Summary(uk):	Модуль для Perl CGI
 Summary(zh_CN):	CGI Perl дё©И
 Name:		perl-CGI
 Version:	3.00
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
