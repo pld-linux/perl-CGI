@@ -9,7 +9,7 @@ Summary:	CGI Perl module - simple CGI interface class
 Summary(pl):	Modu³ Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
 Version:	3.05
-Release:	1
+Release:	2
 Epoch:		1
 # same as perl
 License:	GPL or Artistic
