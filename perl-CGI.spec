@@ -1,6 +1,7 @@
 #
 # Conditional build:
 # _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	CGI
 %define		pnam	CGI
@@ -22,7 +23,7 @@ Summary(sv):	CGI Perlmodul
 Summary(uk):	Модуль для Perl CGI
 Summary(zh_CN):	CGI Perl дё©И
 Name:		perl-CGI
-Version:	2.81
+Version:	2.85
 Release:	1
 Epoch:		1
 License:	GPL/Artistic
