@@ -56,10 +56,7 @@ Przyk³ady u¿ycia modu³u CGI.
 %{?with_tests:%{__make} test}
 
 cd examples
-for i in *
-do
-	sed -i -e 's|/usr/local/bin/perl|/usr/bin/perl|g' $i
-done
+sed -i -e 's|/usr/local/bin/perl|/usr/bin/perl|g' *
 cd ..
 
 %install
