@@ -48,16 +48,14 @@ Przyk³ady u¿ycia modu³u CGI.
 %prep
 %setup -q -n %{pnam}.pm-%{version}
 
+%{__perl} -pi -e 's|/usr/local/bin/perl|/usr/bin/perl|g' examples/*.cgi
+
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
 
 %{?with_tests:%{__make} test}
-
-cd examples
-sed -i -e 's|/usr/local/bin/perl|/usr/bin/perl|g' *
-cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
