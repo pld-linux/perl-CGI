@@ -12,8 +12,6 @@ Source0:	ftp://ftp.cpan.org/CPAN/authors/id/L/LD/LDS/CGI.pm-%{version}.tar.gz
 Patch0: %{name}-rpmperl-automation-workaround.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl
-%requires_eq	perl
-Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
