@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	CGI
-%define		pnam	CGI
+%define	pdir	CGI
+%define	pnam	CGI
 Summary:	CGI Perl module - simple CGI interface class
 Summary(pl):	Modu³ Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
