@@ -23,7 +23,7 @@ Summary(sv):	CGI Perlmodul
 Summary(uk):	Модуль для Perl CGI
 Summary(zh_CN):	CGI Perl дё©И
 Name:		perl-CGI
-Version:	2.85
+Version:	2.86
 Release:	1
 Epoch:		1
 License:	GPL/Artistic
