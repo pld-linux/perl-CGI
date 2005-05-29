@@ -8,14 +8,14 @@
 Summary:	CGI Perl module - simple CGI interface class
 Summary(pl):	Modu³ Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
-Version:	3.05
-Release:	2
+Version:	3.10
+Release:	1
 Epoch:		1
 # same as perl
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
-# Source0-md5:	4e1e2288369089e56e8a115aade93ea4
+# Source0-md5:	63dc6621ebee69ec241cd5d86875714f
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildArch:	noarch
@@ -29,7 +29,7 @@ scripts. This is replacement for usually outdated CGI module from perl
 distribution.
 
 %description -l pl
-CGI jest modu³em to prostego i szybkiego pisania aplikacji dla WWW -
+CGI jest modu³em do prostego i szybkiego pisania aplikacji dla WWW -
 skryptów CGI. Pakiet ten zawiera zamiennik dla zazwyczaj starej wersji
 modu³u CGI która jest dostarczana razem z perlem.
 
