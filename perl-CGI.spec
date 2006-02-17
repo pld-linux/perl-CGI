@@ -4,20 +4,20 @@
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	CGI
-%define		pnam	CGI
 Summary:	CGI Perl module - simple CGI interface class
 Summary(pl):	Modu³ Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
-Version:	3.15
-Release:	0.1
+Version:	3.16
+Release:	1
 Epoch:		1
 # same as perl
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}.pm-%{version}.tar.gz
-# Source0-md5:	37db43e55cf2992f7e89e9ec9541ffec
-BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}.pm-%{version}.tar.gz
+# Source0-md5:	afd5d046662a4338b02ab5d10549304a
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
+BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,9 +46,9 @@ Examples for the CGI module.
 Przyk³ady u¿ycia modu³u CGI.
 
 %prep
-%setup -q -n %{pnam}.pm-%{version}
+%setup -q -n %{pdir}.pm-%{version}
 
-%{__perl} -pi -e 's|/usr/local/bin/perl|/usr/bin/perl|g' examples/*.cgi
+%{__sed} -i -e 's|/usr/local/bin/perl|/usr/bin/perl|g' examples/*.cgi
 
 %build
 %{__perl} Makefile.PL \
