@@ -18,6 +18,9 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}.pm-%{version}.tar
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	sed >= 4.0
+%if %{with tests}
+BuildRequires:	perl-FCGI
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
