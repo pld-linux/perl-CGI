@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	CGI
 Summary:	CGI Perl module - simple CGI interface class
-Summary(pl):	Modu≥ Perla CGI - prosta klasa interfejsu do CGI
+Summary(pl.UTF-8):   Modu≈Ç Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
 Version:	3.25
 Release:	1
@@ -31,22 +31,22 @@ CGI is an easy-to-use Perl5 library for writing World Wide Web CGI
 scripts. This is replacement for usually outdated CGI module from perl
 distribution.
 
-%description -l pl
-CGI jest modu≥em do prostego i szybkiego pisania aplikacji dla WWW -
-skryptÛw CGI. Pakiet ten zawiera zamiennik dla zazwyczaj starej wersji
-modu≥u CGI ktÛra jest dostarczana razem z perlem.
+%description -l pl.UTF-8
+CGI jest modu≈Çem do prostego i szybkiego pisania aplikacji dla WWW -
+skrypt√≥w CGI. Pakiet ten zawiera zamiennik dla zazwyczaj starej wersji
+modu≈Çu CGI kt√≥ra jest dostarczana razem z perlem.
 
 %package examples
 Summary:	Examples for the CGI module
-Summary(pl):	Przyk≥ady uøycia modu≥u CGI
+Summary(pl.UTF-8):   Przyk≈Çady u≈ºycia modu≈Çu CGI
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{epoch}:%{version}
 
 %description examples
 Examples for the CGI module.
 
-%description examples -l pl
-Przyk≥ady uøycia modu≥u CGI.
+%description examples -l pl.UTF-8
+Przyk≈Çady u≈ºycia modu≈Çu CGI.
 
 %prep
 %setup -q -n %{pdir}.pm-%{version}
