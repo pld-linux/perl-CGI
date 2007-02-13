@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	CGI
 Summary:	CGI Perl module - simple CGI interface class
-Summary(pl.UTF-8):   Moduł Perla CGI - prosta klasa interfejsu do CGI
+Summary(pl.UTF-8):	Moduł Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
 Version:	3.25
 Release:	1
@@ -38,7 +38,7 @@ modułu CGI która jest dostarczana razem z perlem.
 
 %package examples
 Summary:	Examples for the CGI module
-Summary(pl.UTF-8):   Przykłady użycia modułu CGI
+Summary(pl.UTF-8):	Przykłady użycia modułu CGI
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{epoch}:%{version}
 
