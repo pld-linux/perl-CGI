@@ -13,8 +13,9 @@ Epoch:		1
 # same as perl
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}.pm-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/CGI/%{pdir}.pm-%{version}.tar.gz
 # Source0-md5:	08cb2f363f7d94a5d000945e4032d9ea
+URL:		http://search.cpan.org/dist/CGI.pm/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	sed >= 4.0
