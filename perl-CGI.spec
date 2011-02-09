@@ -7,14 +7,14 @@
 Summary:	CGI Perl module - simple CGI interface class
 Summary(pl.UTF-8):	Moduł Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
-Version:	3.48
+Version:	3.52
 Release:	1
 Epoch:		1
 # same as perl
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/CGI/%{pdir}.pm-%{version}.tar.gz
-# Source0-md5:	5a48152cb58d112d572725df8b81d3c7
+Source0:	http://www.cpan.org/modules/by-module/CGI/MARKSTOS/%{pdir}.pm-%{version}.tar.gz
+# Source0-md5:	6ec43c8777713175e71ad9b19598899f
 URL:		http://search.cpan.org/dist/CGI.pm/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
@@ -41,7 +41,7 @@ modułu CGI która jest dostarczana razem z perlem.
 Summary:	Examples for the CGI module
 Summary(pl.UTF-8):	Przykłady użycia modułu CGI
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description examples
 Examples for the CGI module.
@@ -52,7 +52,7 @@ Przykłady użycia modułu CGI.
 %prep
 %setup -q -n %{pdir}.pm-%{version}
 
-%{__sed} -i -e 's|/usr/local/bin/perl|/usr/bin/perl|g' examples/*.cgi
+%{__sed} -i -e 's|/usr/local/bin/perl|/usr/bin/perl|g' examples/*.{cgi,pl}
 
 %build
 %{__perl} Makefile.PL \
@@ -77,12 +77,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README *.html
 %{perl_vendorlib}/CGI.pm
-%{perl_vendorlib}/CGI/*
-%{_mandir}/man3/*
+%{perl_vendorlib}/CGI/*.pm
+%{_mandir}/man3/CGI*.3pm*
 
 %files examples
 %defattr(644,root,root,755)
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.cgi
-%{_examplesdir}/%{name}-%{version}/*.[!c]*
-%{_examplesdir}/%{name}-%{version}/WORLD*
+%attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.pl
+%{_examplesdir}/%{name}-%{version}/*.gif
+%{_examplesdir}/%{name}-%{version}/*.html
+%{_examplesdir}/%{name}-%{version}/*.xbm
+%{_examplesdir}/%{name}-%{version}/WORLD_WRITABLE
