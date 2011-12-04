@@ -21,7 +21,9 @@ BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	sed >= 4.0
 %if %{with tests}
 BuildRequires:	perl-Encode
-BuildRequires:	perl-FCGI
+BuildRequires:	perl-FCGI >= 0.67
+BuildRequires:	perl-Test-Simple >= 0.98
+BuildRequires:	perl(File::Spec) >= 0.82
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
