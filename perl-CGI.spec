@@ -7,23 +7,23 @@
 Summary:	CGI Perl module - simple CGI interface class
 Summary(pl.UTF-8):	Moduł Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
-Version:	3.64
+Version:	4.04
 Release:	1
 Epoch:		1
 # same as perl
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/CGI/MARKSTOS/%{pdir}.pm-%{version}.tar.gz
-# Source0-md5:	396afa921d7ce76aa3a5dc4ff744bf3d
+Source0:	https://github.com/leejo/CGI.pm/archive/v%{version}.tar.gz
+# Source0-md5:	37ecb1815f12d8d828877d3e8c44c4b8
 URL:		http://search.cpan.org/dist/CGI.pm/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	sed >= 4.0
 %if %{with tests}
+BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl-Encode
 BuildRequires:	perl-FCGI >= 0.67
 BuildRequires:	perl-Test-Simple >= 0.98
-BuildRequires:	perl(File::Spec) >= 0.82
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README *.html
+%doc Changes README.md
 %{perl_vendorlib}/CGI.pm
 %{perl_vendorlib}/CGI/*.pm
 %{_mandir}/man3/CGI*.3pm*
