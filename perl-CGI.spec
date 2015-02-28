@@ -1,9 +1,9 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	CGI
+%include	/usr/lib/rpm/macros.perl
 Summary:	CGI Perl module - simple CGI interface class
 Summary(pl.UTF-8):	Moduł Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
@@ -19,16 +19,21 @@ URL:		http://search.cpan.org/dist/CGI.pm/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	sed >= 4.0
+BuildRequires:    rpmbuild(macros) >= 1.654
 %if %{with tests}
 BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl-Encode
 BuildRequires:	perl-FCGI >= 0.67
+BuildRequires:	perl-HTML-Parser
+BuildRequires:	perl-Test-Deep
+BuildRequires:	perl-Test-NoWarnings
 BuildRequires:	perl-Test-Simple >= 0.98
+BuildRequires:	perl-Test-Warn
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	perl(FCGI)
+%define		_noautoreq_perl	FCGI
 
 %description
 CGI is an easy-to-use Perl5 library for writing World Wide Web CGI
