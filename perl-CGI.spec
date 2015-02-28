@@ -7,14 +7,14 @@
 Summary:	CGI Perl module - simple CGI interface class
 Summary(pl.UTF-8):	Moduł Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
-Version:	4.04
+Version:	4.13
 Release:	1
 Epoch:		1
 # same as perl
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	https://github.com/leejo/CGI.pm/archive/v%{version}.tar.gz
-# Source0-md5:	37ecb1815f12d8d828877d3e8c44c4b8
+# Source0-md5:	48ed1e50f34e32de6787bffe129ff71b
 URL:		http://search.cpan.org/dist/CGI.pm/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
@@ -80,7 +80,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README.md
 %{perl_vendorlib}/CGI.pm
+%{perl_vendorlib}/Fh.pm
 %{perl_vendorlib}/CGI/*.pm
+%{perl_vendorlib}/CGI/File
 %{_mandir}/man3/CGI*.3pm*
 
 %files examples
