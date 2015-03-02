@@ -16,20 +16,22 @@ Group:		Development/Languages/Perl
 Source0:	https://github.com/leejo/CGI.pm/archive/v%{version}.tar.gz
 # Source0-md5:	48ed1e50f34e32de6787bffe129ff71b
 URL:		http://search.cpan.org/dist/CGI.pm/
-BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
+BuildRequires:	rpmbuild(macros) >= 1.654
 BuildRequires:	sed >= 4.0
-BuildRequires:    rpmbuild(macros) >= 1.654
 %if %{with tests}
 BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl-Encode
 BuildRequires:	perl-FCGI >= 0.67
-BuildRequires:	perl-HTML-Parser
-BuildRequires:	perl-Test-Deep
-BuildRequires:	perl-Test-NoWarnings
+BuildRequires:	perl-HTML-Parser >= 3.69
+BuildRequires:	perl-Test-Deep >= 0.11
+BuildRequires:	perl-Test-NoWarnings >= 1.04
 BuildRequires:	perl-Test-Simple >= 0.98
-BuildRequires:	perl-Test-Warn
+BuildRequires:	perl-Test-Warn >= 0.30
 %endif
+Requires:	perl(File::Spec) >= 0.82
+Requires:	perl-HTML-Parser >= 3.69
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
