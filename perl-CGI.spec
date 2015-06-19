@@ -80,6 +80,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}
 
 cp -a examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/CGI.pod
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
