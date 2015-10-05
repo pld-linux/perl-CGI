@@ -7,15 +7,15 @@
 Summary:	CGI Perl module - simple CGI interface class
 Summary(pl.UTF-8):	Moduł Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
-Version:	4.20
+Version:	4.21
 Release:	1
 Epoch:		1
 # same as perl
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	https://github.com/leejo/CGI.pm/archive/v%{version}.tar.gz
-# Source0-md5:	738a575828f6b111830ab4e3445cd851
-URL:		http://search.cpan.org/dist/CGI.pm/
+Source0:	http://search.cpan.org/CPAN/authors/id/L/LE/LEEJO/CGI-%{version}.tar.gz
+# Source0-md5:	78b427bfee2dd21b2e612b5bfe5f038c
+URL:		http://search.cpan.org/dist/CGI/
 BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	rpmbuild(macros) >= 1.654
@@ -60,7 +60,7 @@ Examples for the CGI module.
 Przykłady użycia modułu CGI.
 
 %prep
-%setup -q -n %{pdir}.pm-%{version}
+%setup -q -n %{pdir}-%{version}
 
 %{__sed} -i -e 's|/usr/local/bin/perl|/usr/bin/perl|g' examples/*.{cgi,pl}
 
