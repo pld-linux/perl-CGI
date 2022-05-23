@@ -61,7 +61,7 @@ Przykłady użycia modułu CGI.
 %prep
 %setup -q -n %{pdir}-%{version}
 
-%{__sed} -i -e 's|/usr/local/bin/perl|/usr/bin/perl|g' examples/*.{cgi,pl}
+%{__sed} -i -e 's|/usr/bin/env perl|%{__perl}|g' examples/*.{cgi,pl}
 
 %build
 %{__perl} Makefile.PL \
