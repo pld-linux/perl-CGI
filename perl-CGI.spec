@@ -17,7 +17,7 @@ Source0:	http://search.cpan.org/CPAN/authors/id/L/LE/LEEJO/CGI-%{version}.tar.gz
 URL:		http://search.cpan.org/dist/CGI/
 BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
-BuildRequires:	rpmbuild(macros) >= 1.654
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildRequires:	sed >= 4.0
 %if %{with tests}
 BuildRequires:	perl(File::Spec) >= 0.82
