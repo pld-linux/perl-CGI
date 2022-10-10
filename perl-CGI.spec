@@ -14,7 +14,7 @@ License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/L/LE/LEEJO/CGI-%{version}.tar.gz
 # Source0-md5:	d12ddcd7d3db6410e9316ed9b9b5c80f
-URL:		http://search.cpan.org/dist/CGI/
+URL:		https://metacpan.org/dist/CGI
 BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
 BuildRequires:	rpmbuild(macros) >= 1.745
