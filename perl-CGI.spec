@@ -1,19 +1,19 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_without	tests	# unit tests
 
 %define		pdir	CGI
 Summary:	CGI Perl module - simple CGI interface class
 Summary(pl.UTF-8):	Moduł Perla CGI - prosta klasa interfejsu do CGI
 Name:		perl-CGI
-Version:	4.54
+Version:	4.70
 Release:	1
 Epoch:		1
 # same as perl
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/L/LE/LEEJO/CGI-%{version}.tar.gz
-# Source0-md5:	d12ddcd7d3db6410e9316ed9b9b5c80f
+Source0:	https://www.cpan.org/modules/by-module/CGI/CGI-%{version}.tar.gz
+# Source0-md5:	df7052e65cfdddd615fa36ebda74ff45
 URL:		https://metacpan.org/dist/CGI
 BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.3-0.20030610.20.2
@@ -23,11 +23,13 @@ BuildRequires:	sed >= 4.0
 BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl-Encode
 BuildRequires:	perl-FCGI >= 0.67
+BuildRequires:	perl-File-Temp >= 0.17
 BuildRequires:	perl-HTML-Parser >= 3.69
-BuildRequires:	perl-Test-Deep >= 0.11
 BuildRequires:	perl-Test-NoWarnings >= 1.04
 BuildRequires:	perl-Test-Simple >= 0.98
 BuildRequires:	perl-Test-Warn >= 0.30
+BuildRequires:	perl-URI >= 1.76
+BuildRequires:	perl-parent >= 0.225
 %endif
 Requires:	perl(File::Spec) >= 0.82
 Requires:	perl-HTML-Parser >= 3.69
@@ -66,6 +68,7 @@ Przykłady użycia modułu CGI.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+
 %{__make}
 
 %{?with_tests:%{__make} test}
